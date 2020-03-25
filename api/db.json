@@ -1,0 +1,24 @@
+{
+  "streams": [
+    {
+      "title": "Sneakers",
+      "description": "qwerty",
+      "id": 1
+    },
+    {
+      "title": "white shirt",
+      "description": "Hi there! What can I help you with?",
+      "id": 2
+    },
+    {
+      "title": "H&M jeans ",
+      "description": "33333333333",
+      "id": 3
+    },
+    {
+      "title": "Shoes",
+      "description": "werty",
+      "id": 4
+    }
+  ]
+}
