@@ -1,7 +1,8 @@
 const initialState = {
   isSignedIn: null,
   name: 'AUTH',
-  userId: null
+  userId: null,
+  userData: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -18,6 +19,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         isSignedIn: false,
         userId: null
+      }
+    case 'CREATE_STREAM': 
+      // const [ title, description ] = action.payload
+      return{
+        ...state,
+        userData: [...state.userData, action.payload]
       }
     default: return state
   }

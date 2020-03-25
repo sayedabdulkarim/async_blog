@@ -18,12 +18,13 @@ const signOut = () => {
 const createStream = (formValues) => {
   return dispatch => {
     axios.post('http://localhost:3001/streams', formValues)
-      // .then(res => res)
-      // .then(res => {
-      //   dispatch({
-      //     type: ''
-      //   })
-      // })
+      .then(res => res)
+      .then(res => {
+        dispatch({
+          type: 'CREATE_STREAM',
+          payload: res.data
+        })
+      })
   }
 }
 
