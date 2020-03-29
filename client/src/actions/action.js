@@ -17,8 +17,9 @@ const signOut = () => {
 
 //create
 const createStream = (formValues) => {
-  return dispatch => {
-    axios.post('http://localhost:3001/streams', formValues)
+  return (dispatch, getState) => {
+    const { userId } = getState().authReducer;
+    axios.post('http://localhost:3001/streams', {...formValues, userId })
       .then(res => res)
       .then(res => {
         dispatch({

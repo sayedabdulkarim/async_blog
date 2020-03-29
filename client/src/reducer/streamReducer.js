@@ -15,9 +15,10 @@ const initialState = {
 //       }
 //     case 'FETCH_STREAMS': 
 //       // const [ title, description ] = action.payload
+//       console.log(action.payload, ' action.payload streamsssss');
 //       return{
 //         ...state,
-//         userData: [...state.userData, ...action.payload]
+//         userData: action.payload
 //         // userData: [...state.userData, action.payload]
 //       }
 //     case 'FETCH_STREAM': 
@@ -33,6 +34,9 @@ const initialState = {
 //         // userData: [...state.userData, action.payload]
 //       }
 //     case 'EDIT_STREAM': 
+//       return{
+//         ...state
+//       }
 //       // const [ title, description ] = action.payload
   
 //     default:
