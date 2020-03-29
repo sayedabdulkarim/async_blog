@@ -3,11 +3,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 //actions
-import { createStream } from '../../actions/action'
+import { createStream, fetchStreams, fetchStream, deleteStream, editStream0 } from '../../actions/action'
 
 import { Field, reduxForm } from 'redux-form'
 
 class StreamCreate extends Component {
+
+  componentDidMount() {
+  }
+  
 
   renderError = ({ error, touch }) => {
     if(touch, error){
@@ -22,7 +26,7 @@ class StreamCreate extends Component {
   renderInput = ({ input, label, meta }) => {
     // console.log(formProps, ' propsssssssssssss');
     // return <input {...formProps.input}/>
-    console.log(meta, ' metaaaa')
+    // console.log(meta, ' metaaaa')
     const className =  `field ${ meta.error && meta.touched ? 'error' : ''}`
     return (
       <div className="field">
@@ -49,7 +53,7 @@ class StreamCreate extends Component {
   }
 
   render() {
-    // console.log(this.props, ' propsssss');
+    // console.log(this.props.userData, ' userData propsssss');
 
     return (
       <form className="ui form error" onSubmit={ this.props.handleSubmit(this.onSubmit) }>
@@ -74,12 +78,15 @@ const validate = (formValues) => {
 }
 
 const mapStateToProps = state => {
-  return{}
+  // console.log(state, ' stateeeeeeeee')
+  return{
+    userData: state.streamReducer.userData
+  }
 }
 
 const mapDispatchToProps = dispatch => {
   return{
-    createStream: (val) => dispatch(createStream(val))
+    createStream: (val) => dispatch(createStream(val)),
   }
 }
 

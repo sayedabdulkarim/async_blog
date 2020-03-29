@@ -17,10 +17,6 @@ class GoogleAuth extends Component {
 
  componentDidMount() {
 
-  axios.get('http://localhost:3001/streams')
-    .then(res => res)
-    .then(res => console.log(res.data, ' ressssss'))
-
    window.gapi.load('client:auth2', () => {
      window.gapi.client.init({
        clientId: '195023238947-hgaf9uu5sug2p397evlml32pdcj6m3o5.apps.googleusercontent.com',

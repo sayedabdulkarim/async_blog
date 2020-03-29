@@ -15,6 +15,7 @@ const signOut = () => {
   }
 }
 
+//create
 const createStream = (formValues) => {
   return dispatch => {
     axios.post('http://localhost:3001/streams', formValues)
@@ -33,8 +34,83 @@ const createStream = (formValues) => {
 //     streams.post('/streams', formValues)
 // }
 
+
+//fetch_All
+
+const fetchStreams = () => {
+  return dispatch => {
+    axios.get('http://localhost:3001/streams')
+      .then(res => res)
+      .then(res => {
+        dispatch({
+          type: 'FETCH_STREAMS',
+          payload: res.data
+        })
+      })
+  }
+}
+
+//
+
+//fetch_single
+
+const fetchStream = (id) => {
+  return dispatch => {
+    axios.get(`http://localhost:3001/streams/${id}`)
+      .then(res => res)
+      .then(res => {
+        dispatch({
+          type: 'FETCH_STREAM',
+          payload: res.data
+        })
+      })
+  }
+}
+
+
+//edit
+
+const editStream = (id, formValues) => {
+  return dispatch => {
+    axios.put(`http://localhost:3001/streams/${id}`, formValues)
+      .then(res => res)
+      .then(res => {
+        dispatch({
+          type: 'EDIT_STREAM',
+          payload: res.data
+        })
+      })
+  }
+}
+
+//
+
+
+//
+
+//delete
+
+const deleteStream = (id) => {
+  return dispatch => {
+    axios.delete(`http://localhost:3001/streams/${id}`)
+      .then(res => res)
+      .then(res => {
+        dispatch({
+          type: 'DELETE_STREAM',
+          payload: id
+        })
+      })
+  }
+}
+
+//
+
 export {
   signIn,
   signOut,
-  createStream
+  createStream,
+  fetchStreams,
+  fetchStream,
+  deleteStream,
+  editStream
 }
