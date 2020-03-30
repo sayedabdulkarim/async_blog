@@ -3,11 +3,13 @@ import styles from './App.css'
 
 import 'babel-polyfill';
 
+//history
+import history from '../history'
 
 import { connect } from 'react-redux'
 
 //router
-import { BrowserRouter as Router, HashRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Router, HashRouter, Route, Switch } from 'react-router-dom'
 
 //pages
 import Header from './Header'
@@ -21,19 +23,20 @@ import StreamShow from './streams/streamShow'
 
 class App extends Component {
   render() {
-    console.log(this.props, ' props');
+    // console.log(this.props, ' props');
     return (
       <div className="ui container">
-        <HashRouter>
+        <Router history={ history }>
           <Header />
           <Switch>
             <Route path="/streams/show" component={ StreamShow }/>
-            <Route path="/streams/edit" component={ StreamEdit }/>
+            <Route path="/streams/edit/:id" component={ StreamEdit }/>
             <Route path="/streams/delete" component={ StreamDelete }/>
             <Route path="/streams/new" component={ StreamCreate }/>
             <Route path="/" component={ StreamList }/>
+            <Route component={ StreamList }/>
           </Switch>
-        </HashRouter>
+        </Router>
       </div>
     )
   }

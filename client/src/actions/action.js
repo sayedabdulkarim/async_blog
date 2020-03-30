@@ -2,6 +2,12 @@ import axios from 'axios'
 
 import streams from '../apis/stream'
 
+//history
+import createHistory from '../history'
+
+// console.log(createHistory, ' createhistory');
+// console.log(history, ' props history');
+
 const signIn = (payload) => {
   return{
     type: 'SIGN_IN',
@@ -27,6 +33,8 @@ const createStream = (formValues) => {
           payload: res.data
         })
       })
+      .then(() => createHistory.push('/'))
+      // .then(() => history.push('/'))
   }
 }
 

@@ -8,6 +8,7 @@ const config = {
   output: {
         path: path.join(__dirname, '/dist'), 
         filename: 'index_bundle.js', // plc wer bndld app wl b srvd
+        publicPath: '/'
      },
   devServer: {
         historyApiFallback: true,

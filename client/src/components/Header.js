@@ -11,6 +11,7 @@ export default class Header extends Component {
     return (
       <div className="ui secondary pointing menu">
         <Link to="/" className="item">Streamy</Link>
+        <Link to="/streams/new" className="item">NEW STREAM</Link>
         <div className="right menu">
           <Link to="/streams/edit" className="item">All Streams</Link>
           <GoogleAuth />
