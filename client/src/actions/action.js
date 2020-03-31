@@ -89,6 +89,7 @@ const editStream = (id, formValues) => {
           payload: res.data
         })
       })
+      .then(() => createHistory.push('/'))
   }
 }
 
