@@ -110,6 +110,7 @@ const deleteStream = (id) => {
           payload: id
         })
       })
+      .then(() => createHistory.push('/'))
   }
 }
 

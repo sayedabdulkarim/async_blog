@@ -4,7 +4,8 @@
   "description": "boiler_plate_for_react",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot",
+    "build": "webpack --mode production"
   },
   "author": "abdul",
   "license": "ISC",
